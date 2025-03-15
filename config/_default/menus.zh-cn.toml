@@ -10,60 +10,74 @@
 # overridden by providing a weight value. The menu will then be
 # ordered by weight from lowest to highest.
 
-#[[main]]
-#  name = "Blog"
-#  pageRef = "posts"
-#  weight = 10
+[[main]]
+  name    = "文章列表"
+  pageRef = "posts"
+  weight  = 10
 
-#[[main]]
-#  name = "Parent"
-#  weight = 20
+[[main]]
+  name    = "简码"
+  pageRef = "posts/short_code_doc"
+  weight  = 15
+  # 多级菜单列表
+  # [[main]]
+  #   name   = "示例"
+  #   weight = 20
 
-#[[main]]
-#  name = "example sub-menu 1"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
+  # [[main]]
+  #   name    = "功能示例"
+  #   parent  = "示例"
+  #   pageRef = "samples"
+  #   weight  = 16
 
-#[[main]]
-#  name = "example sub-menu 2"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
+  # [[main]]
+  #   name    = "模板示例"
+  #   parent  = "示例"
+  #   pageRef = "examples"
+  #   weight  = 30
 
-#[[subnavigation]]
-#  name = "An interesting topic"
-#  pageRef = "tags/interesting-topic"
-#  weight = 10
+[[main]]
+ name = "类别"
+ pageRef = "categories"
+ weight = 20
 
-#[[subnavigation]]
-#  name = "My Awesome Category"
-#  pre = "github"
-#  pageRef = "categories/awesome"
-#  weight = 20
+[[main]]
+ name = "标签"
+ pageRef = "tags"
+ weight = 30
 
-#[[main]]
-#  name = "Categories"
-#  pageRef = "categories"
-#  weight = 20
+[[main]]
+  name    = "友链"
+  pageRef = "links"
+  weight  = 90
 
-#[[main]]
-#  name = "Tags"
-#  pageRef = "tags"
-#  weight = 30
+  #[[main]]
+  #  name = "Test"
+  #  pageRef = "pagTest"
+  #  weight = 1000
+
+[[main]]
+  identifier = "github"
+  pre        = "github"
+  url        = "https://github.com/Oswald522"
+  weight     = 400
 
 
-# -- Footer Menu --
-# The footer menu is displayed at the bottom of the page, just before
-# the copyright notice. Configure as per the main menu above.
+  # -- Footer Menu --
+  # The footer menu is displayed at the bottom of the page, just before
+  # the copyright notice. Configure as per the main menu above.
 
+[[footer]]
+  name    = "关于"
+  pageRef = "about"
+  weight  = 5
 
-# [[footer]]
-#   name = "Tags"
-#   pageRef = "tags"
-#   weight = 10
+[[footer]]
+  name    = "版权声明"
+  pageRef = "copyright"
+  weight  = 10
 
-# [[footer]]
-#   name = "Categories"
-#   pageRef = "categories"
-#   weight = 20
+[[footer]]
+  name   = "站点地图"
+  url    = "/sitemap.xml"
+  weight = 30

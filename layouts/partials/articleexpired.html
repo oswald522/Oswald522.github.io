@@ -1,0 +1,59 @@
+<div id="update-info" style="display: none;"
+    {{ if not ($.Scratch.Get "cardColor") }}
+      class="flex max-w-prose py-1 mt-2 px-4 rounded-lg bg-primary-100 dark:bg-primary-900"
+    {{ else }}
+      class="flex max-w-prose py-1 mt-2 px-4 rounded-lg"
+      style="background-color: {{ $.Scratch.Get "cardColor" }} "
+    {{ end }}>
+
+    <span
+      {{ if not ($.Scratch.Get "iconColor") }}
+        class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+      {{ else }}
+        class="ltr:pr-3 rtl:pl-3 flex items-center"
+        style="color: {{ $.Scratch.Get "iconColor" }}"
+      {{ end }}>
+      {{ partial "icon.html" ("circle-info") }}
+    </span>
+
+    <span
+    {{ if not ($.Scratch.Get "textColor") }}
+      class="dark:text-neutral-300"
+    {{ else }}
+      style="color: {{ $.Scratch.Get "textColor" }}"
+    {{ end }}>
+    <p style="margin-top: 0px; margin-bottom: 0px;" id="update-text">上次更新于 loading... 前，部分内容可能已经过期。</p>
+    </span>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 获取 Hugo 渲染的时间，并转换为标准的 ISO 8601 格式
+    const lastModifiedStr = "{{ .Lastmod }}";
+
+    // 使用正则将时间转换为 ISO 格式
+    const lastModified = new Date(lastModifiedStr.replace(/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2}) ([\+\-]\d{4}) (CST)/, '$1-$2-$3T$4:$5:$6$7'));
+
+    const now = new Date();
+    const duration = now - lastModified;
+    const days = Math.floor(duration / (1000 * 60 * 60 * 24));
+    const years = Math.floor(days / 365);
+    const remainingDays = days % 365;
+
+    let updateText = "";
+    let updateInfoDiv = document.getElementById("update-info");
+
+    // 当天数大于等于 30 时显示 div
+    if (days >= 30) {
+        updateInfoDiv.style.display = "flex";  // 显示 div
+        if (years >= 1) {
+            updateText = `上次更新于 ${years} 年 ${remainingDays} 天前，部分内容可能已经过期。`;
+        } else {
+            updateText = `上次更新于 ${remainingDays} 天前，部分内容可能已经过期。`;
+        }
+    }
+
+    // 更新提示文本
+    document.getElementById("update-text").textContent = updateText;
+  });
+</script>
