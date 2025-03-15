@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://Oswald522.github.io/sitemap.xml
