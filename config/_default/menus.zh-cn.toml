@@ -15,10 +15,10 @@
   pageRef = "posts"
   weight  = 10
 
-[[main]]
-  name    = "简码"
-  pageRef = "posts/short_code_doc"
-  weight  = 15
+  # [[main]]
+  #   name    = "简码"
+  #   pageRef = "posts/short_code_doc"
+  #   weight  = 15
   # 多级菜单列表
   # [[main]]
   #   name   = "示例"
@@ -37,14 +37,20 @@
   #   weight  = 30
 
 [[main]]
- name = "类别"
- pageRef = "categories"
- weight = 20
+  name    = "系列"
+  pageRef = "series"
+  weight  = 20
 
 [[main]]
- name = "标签"
- pageRef = "tags"
- weight = 30
+  name    = "标签"
+  pageRef = "tags"
+  weight  = 30
+[[main]]
+  name    = "关于"
+  pageRef = "about"
+  weight  = 35
+
+
 
 [[main]]
   name    = "友链"
@@ -55,6 +61,9 @@
   #  name = "Test"
   #  pageRef = "pagTest"
   #  weight = 1000
+
+
+
 
 [[main]]
   identifier = "github"
@@ -67,10 +76,10 @@
   # The footer menu is displayed at the bottom of the page, just before
   # the copyright notice. Configure as per the main menu above.
 
-[[footer]]
-  name    = "关于"
-  pageRef = "about"
-  weight  = 5
+# [[footer]]
+#   name    = "关于"
+#   pageRef = "about"
+#   weight  = 5
 
 [[footer]]
   name    = "版权声明"

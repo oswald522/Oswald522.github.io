@@ -1,16 +1,19 @@
-+++
-date = '2025-03-09T12:19:00+08:00'
-Lastmod = '2024-03-09T12:19:00+08:00'
-draft = false
-title = '购车踩坑之旅'
-description = 'Test Post Content'
-showComments = true
-# featureimage = "https://api.dujin.org/bing/1920.php/?1313"
-+++
+---
+date: '2025-03-09T12:19:00+08:00'
+Lastmod: '2024-03-09T12:19:00+08:00'
+draft: false
+title: '[转载]购车踩坑之旅'
+description: 'Test Post Content'
+showComments: true
+featureimage: "https://picsum.photos/seed/7056cd/1600/900.webp"
+tags: ["经验转载" , "日常记录"]
+---
 
+> {{< alert icon="fire" >}}
+全文转载自 [TARESKY](https://taresky.com/honda-inspire) 写于 2019-03-17 13:49:17
+{{< /alert >}}
 
-
-> 最近购车了，遇到一些坑，或者说潜规则。前期做的功课不多，网上的攻略也不够好，值得花时间整理和分享出来。
+最近购车了，遇到一些坑，或者说潜规则。前期做的功课不多，网上的攻略也不够好，值得花时间整理和分享出来。
 
 在正文开始之前，有两个观点需要先阐明：
 
@@ -49,3 +52,7 @@ showComments = true
 
 1. 保险建议只买车损+三者（100万以上）+玻璃险。划痕险留到第四年第五年再买，补的钱不多。
 2. 如果把车辆合格证交给车管所之前，拍照留存了一张。那么恭喜你，你可以购买超低价保险（3折-4折）。原理是各大保险公司在四川地区大力推广，因此该地区投保价格低得可怕，网上找一些办法可以异地投保，理论上不影响理赔和使用。
+
+## 附录
+
+- [TARESKY](https://taresky.com/honda-inspire)

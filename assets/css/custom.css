@@ -1,11 +1,12 @@
 /* 调整文章内容宽度 */
 .article-content {
-    max-width: 100%; 
-    margin: 0 auto;   /* 居中显示 */
+    max-width: 100%;
+    margin: 0 auto;
+    /* 居中显示 */
 }
 
 /* Increase the default font size */
 html {
-    font-size: 15pt;
-  }
-  
+    font-size: 13pt;
+    transform: scale(1.05);
+}

@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+  <!-- <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/3.4.3/waline.css" /> -->
 </head>
 
 <body>
@@ -7,16 +8,17 @@
   <div id="waline"></div>
   <script type="module">
     import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+    // 'https://s4.zstatic.net/ajax/libs/waline/3.4.3/waline.js';
 
     init({
       el: '#waline',
       serverURL: 'https://waline.baos.eu.org/',
-      // lang: 'zh-CN',
-      // locale: { placeholder: '请留下你的宝贵意见' },
+      lang: 'zh-CN',
+      locale: { placeholder: '请留下你的宝贵意见' },
       // wordLimit: 200,
-      // comment: true, // 评论数统计
+      comment: true, // 评论数统计
       // search: false,
-      // pageview: true,
+      pageview: true,
       // emoji: false,
       // emoji: [ // 表情包，不需要的直接注释或者删除
       //   '//unpkg.com/@waline/emojis@1.2.0/bmoji',
