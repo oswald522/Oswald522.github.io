@@ -45,6 +45,7 @@ git submodule add https://github.com/nunocoracao/blowfish.git themes/blowfish
 ```bash
 cp themes/blowfish/exampleSite/config/*  .
 ```
+
 编辑`config.toml`文件，根据你的需求进行个性化配置。
 
 ## 3. 主题相关配置

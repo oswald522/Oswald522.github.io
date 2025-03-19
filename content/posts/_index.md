@@ -1,7 +1,7 @@
 ---
 date: '2025-03-14T23:30:02+08:00'
 draft: false
-title: '吾生也有涯，而知也无涯'
+title: '吾生有涯，而知无涯'
 description: " "
 featureimage: "https://picsum.photos/seed/7056cd/1600/900.webp"
 ---

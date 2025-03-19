@@ -1,6 +1,7 @@
 ---
 title: "使用docker搭建服务简易教程"
 date: 2025-03-15T13:57:59+08:00
+lastmod: 2025-03-19
 draft: false
 description: "基于docker+caddy实现反向代理服务，具备自动SSL、泛域名证书等各种功能。"
 featureimage: "https://picsum.photos/seed/asdkf/800/600.webp"
@@ -12,7 +13,9 @@ featureimage: "https://picsum.photos/seed/asdkf/800/600.webp"
 
 ## 前提和基础
 
-Linux 操作系统，配置好用户名，安装 docker，并确保服务正常运行（运行 docker ps 不会报错）。当前 docker 最新版已经集成 docker-compose，所以不需要重复安装 docker-compose，只是原有的 docker-compose 变更为 docker compose. 新建用户不是必要操作，不过直接使用 root 用户威力过大，使用 test+sudo 可以避免一些权限问题。
+Linux 操作系统，配置好用户名，安装 docker，并确保服务正常运行（运行 docker ps 不会报错）。当前 docker 最新版已经集成 docker-compose，所以不需要重复安装 docker-compose，只是原有的命令`docker-compose` 变更为 `docker compose`（去掉中间的`-`）.
+
+> 新建用户不是必要操作，不过建议操作是这样。SSH应当设置为禁用Root登录，需要使用高等级的权限则使用`sudo`命令。
 
 ```shell
 # 以下均在root用户下执行
@@ -24,10 +27,16 @@ usermod -aG sudo,docker test  # 将test添加至sudo及docker组当中
 newgrp docker     #更新用户组
 ```
 
-1. 配置 Caddy 服务器。使用普通用户 test 执行如下操作：新建文件夹及相应配置文件。
+> 从现在开始所有的命令都是基于`test`用户执行，当前的目录为`/home/test`，而不是`/root`。
 
+### 配置 Caddy 服务器
+
+使用普通用户`test` 执行如下操作：新建文件夹及相应配置文件。
+
+```shell
 mkdir /home/test/CaddyWeb && cd /home/test/CaddyWeb
 touch access.log .env docker-compose.yaml Caddyfile && mkdir caddy_data
+```
 
 提供 caddy 的 docker-compose 配置文件，主要采用 host 模式（必须），占用了 80 和 443 端口，文件内容如下，
 
@@ -109,9 +118,9 @@ CLOUDFLARE_API_TOKEN="自行修改"`
 }
 ```
 
-## 搭建各类型服务
+### 搭建各类型服务（以aria2c为例）
 
-使用搭建各类型服务。自行查找相关服务的配置文件。使用 airia2c 举例来说：
+1. 该部分主要集中在搭建各类型服务，并且暴露出相应的端口。请自行查找相关服务的配置文件。使用 `aria2c` 举例来说：
 
 ```shell
 # Path:/home/test/aria2down/docker-compose.yaml
@@ -145,11 +154,20 @@ services:
         max-size: 1m
 ```
 
+2. 配置caddyfile文件，设置反向代理端口。
+
+```shell
+# 选择caddyfile 合适的位置进行添加
+reverse_proxy /jsonrpc localhost:6800     # aria2c 配置设置
+```
+
+### 常见的docker命令
+
 在使用 Docker Compose 管理服务时，通常需要在 docker-compose.yaml 文件所在的目录下（如 /home/test/CaddyWeb 或者 /home/test/aria2down）执行命令。以下是一些常用的 Docker Compose 命令及其说明：
 
 ```shell
 docker ps # 查看当前服务的状态
-docker compose up # 在首次运行或进行重大更改后，建议先使用 docker compose up（不带 -d）来启动服务并观察输出，确保一切正常后再使用后台模式。
+docker compose up # 在首次运行或进行重大更改后，建议先使用 docker compose up（不带 -d）来启动服务并观察输出，确保一切正常后再使用后台模式
 docker compose up -d # 后台运行服务，按照设置完全不需要在进行管理，重启主机后等服务跟随docker自动启动
 docker compose down   # 停止并移除所有容器、网络
 docker compose stop  # 停止服务但不删除容器
@@ -162,7 +180,7 @@ docker compose down --rmi all --volumes --remove-orphans  # 删除所有未使�
 
 - 当前使用的具有 docker 运行权限的 test 用户，配置文件夹放在当前用户目录下。如果使用 1panel，可以直接在 1panel 下运行部署相关服务。
 - 部分内容 (docker 用法、镜像下载及 cloudflare API Token 申请等) 介绍不太详细，网上参考资料比较多，可以自行查询。国外服务器的话按照配置教程，完全不存在任何问题。CF 可以改用其他的 DNS 解析，如阿里、腾讯等等，此时可能需要修改相关的镜像及配置 Token 等。
-caddy 申请的证书保存在 /home/test/CaddyWeb/caddy_data 当中，权限设置需要 root 用户进行查看。
+caddy 申请的证书保存在 `/home/test/CaddyWeb/caddy_data` 当中，权限设置需要 root 用户进行查看。
 - 如果不习惯命令行，推荐使用 1panel 面板（类似于宝塔等）的方式，界面轻量化，系统占用较低，可以管理相应的服务。
-- 主流需要的服务大多提供了 docker-compose 的配置方式。个人常用的服务主要有：freshrss、aria2c、latex、alist、chat-acad,new-api 等。
-- 在首次运行或进行重大更改后，建议先使用 docker compose up（不带 -d）来启动服务并观察输出，确保一切正常后再使用后台模式。如果只修改了挂载的配置文件，通常只需要重启相关服务即可，可以使用 docker compose restart <service_name>。
+- 主流需要的服务大多提供了 `docker-compose` 的配置方式。个人常用的服务主要有：freshrss、aria2c、latex、alist、chat-acad,new-api 等。
+- 在首次运行或进行重大更改后，建议先使用 `docker compose up`（不带 -d）来启动服务并观察输出，确保一切正常后再使用后台模式。如果只修改了挂载的配置文件，通常只需要重启相关服务即可，可以使用 `docker compose restart <service_name>`。
