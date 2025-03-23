@@ -11,70 +11,67 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-  name    = "文章列表"
-  pageRef = "posts"
-  weight  = 10
+name = "文章列表"
+pageRef = "posts"
+weight = 10
 
-  # [[main]]
-  #   name    = "简码"
-  #   pageRef = "posts/short_code_doc"
-  #   weight  = 15
-  # 多级菜单列表
-  # [[main]]
-  #   name   = "示例"
-  #   weight = 20
+# [[main]]
+#   name    = "简码"
+#   pageRef = "posts/short_code_doc"
+#   weight  = 15
+# 多级菜单列表
+# [[main]]
+#   name   = "示例"
+#   weight = 20
 
-  # [[main]]
-  #   name    = "功能示例"
-  #   parent  = "示例"
-  #   pageRef = "samples"
-  #   weight  = 16
+# [[main]]
+#   name    = "功能示例"
+#   parent  = "示例"
+#   pageRef = "samples"
+#   weight  = 16
 
-  # [[main]]
-  #   name    = "模板示例"
-  #   parent  = "示例"
-  #   pageRef = "examples"
-  #   weight  = 30
-
-[[main]]
-  name    = "系列"
-  pageRef = "series"
-  weight  = 20
+# [[main]]
+#   name    = "模板示例"
+#   parent  = "示例"
+#   pageRef = "examples"
+#   weight  = 30
 
 [[main]]
-  name    = "标签"
-  pageRef = "tags"
-  weight  = 30
-[[main]]
-  name    = "关于"
-  pageRef = "about"
-  weight  = 35
-
-
+name = "系列"
+pageRef = "series"
+weight = 20
 
 [[main]]
-  name    = "友链"
-  pageRef = "links"
-  weight  = 90
-
-  #[[main]]
-  #  name = "Test"
-  #  pageRef = "pagTest"
-  #  weight = 1000
-
-
+name = "标签"
+pageRef = "tags"
+weight = 30
+[[main]]
+name = "关于"
+pageRef = "about"
+weight = 35
 
 
 [[main]]
-  identifier = "github"
-  pre        = "github"
-  url        = "https://github.com/Oswald522"
-  weight     = 400
+name = "友链"
+pageRef = "links"
+weight = 90
+
+#[[main]]
+#  name = "Test"
+#  pageRef = "pagTest"
+#  weight = 1000
 
 
-  # -- Footer Menu --
-  # The footer menu is displayed at the bottom of the page, just before
-  # the copyright notice. Configure as per the main menu above.
+[[main]]
+identifier = "github"
+pre = "github"
+url = "https://github.com/Oswald522"
+weight = 400
+
+
+# -- Footer Menu --
+# The footer menu is displayed at the bottom of the page, just before
+# the copyright notice. Configure as per the main menu above.
 
 # [[footer]]
 #   name    = "关于"
@@ -82,11 +79,16 @@
 #   weight  = 5
 
 [[footer]]
-  name    = "版权声明"
-  pageRef = "copyright"
-  weight  = 10
+name = "版权声明"
+pageRef = "copyright"
+weight = 10
 
 [[footer]]
-  name   = "站点地图"
-  url    = "/sitemap.xml"
-  weight = 30
+name = "站点地图"
+url = "/sitemap.xml"
+weight = 30
+
+[[footer]]
+name = "服务监控"
+url = "https://status.baos.eu.org/status/service"
+weight = 400
