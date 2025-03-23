@@ -9,6 +9,8 @@ featureimage: "https://picsum.photos/seed/asdkf/800/600.webp"
 
 ## 说明
 
+![](docker_logo.png)
+
 教程使用基于 docker 的 caddy 实现各类型服务的搭建，具有以下特性：自动 SSL 证书、通配符证书（泛域名）申请，自动续期，易于迁移等功能，基本取代 NGINX 实现高性能反向代理。迁移的化仅仅需要打包当前文件夹，移动到新服务器下重新启动相应服务即可实现。
 
 ## 前提和基础
