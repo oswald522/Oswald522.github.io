@@ -1,12 +1,15 @@
 ---
 title: "[转载]WSL(Windows Subsystem for Linux) 教程"
-description: ""
+description: WSL安装、使用等教程
 date: 2021-03-23T12:02:45+08:00
 draft: false
 showComments: true
-featureimage: "https://picsum.photos/seed/0fc867/1600/900.webp"
-tags: ""
-# series: "建站技术"
+featureimage: https://picsum.photos/seed/0fc867/1600/900.webp
+tags:
+  - 经验转载
+  - WSL
+  - Linux教程
+  - 技术分享
 ---
 
 ## 前言
