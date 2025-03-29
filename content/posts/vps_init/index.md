@@ -61,7 +61,7 @@ echo "127.0.0.1 {new name}" >> /etc/host
 ssh-keygen -t ed25519 -C "{密钥注释}"
 cp ~/.ssh/authorized_keys ~/.ssh/authorized_keys.bak
 cat <<'EOF' > ~/.ssh/authorized_keys
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMz2IFBt+FWJc750FHf5hFt7UeXqF4gCet7td+FX5FlX Test
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMz2IFBt+XSSXX+FX5FlX Test
 EOF
 ```
 
