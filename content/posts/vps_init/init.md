@@ -6,6 +6,8 @@ draft: false
 description: ""
 featureimage: "https://picsum.photos/seed/674acfad/1600/900.webp"
 showComments: true
+tags: ["经验技术","转载教程"]
+series: "Linux部署"
 ---
 
 <!-- > {{< alert >}}adfasdf{{< /alert >}} -->

@@ -135,7 +135,6 @@ sudo dnf install tlp tlp-rdw
 sudo systemctl enable tlp.service --now
 sudo systemctl mask systemd-rfkill.service
 sudo systemctl mask systemd-rfkill.socket
-
 ```
 
 zinit配置文件见{{< ref "zinit" >}}，安装完毕后运行`p10k configure`可以设置终端的配色主题方案。
