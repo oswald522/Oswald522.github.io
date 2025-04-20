@@ -9,7 +9,8 @@ showComments: true
 featureimage: "https://picsum.photos/seed/2128c8f0/1600/900.webp"
 tags: ["技术教程","经验转载","大模型部署"]
 ## externalUrl: https://linux.do/t/topic/310934
-# series: "建站技术"
+series: "大模型本地部署"
+series_order: 1
 ---
 
 ## 🌟 LM Studio 介绍

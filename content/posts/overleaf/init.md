@@ -1,12 +1,17 @@
 ---
 title: "分享自搭建的 Latex 服务 (overleaf 社区版)"
-date: 2025-03-15T13:57:59+08:00
+date: 2024-03-15T13:57:59+08:00
 draft: false
 description: ""
 showComments: true
 featureimage:  "https://picsum.photos/seed/asdf/800/600.webp"
-series: ["自建服务"]
-series_order: 1
+tags:
+  - Overleaf
+  - 常用软件
+  - 技术教程
+  - 教程配置
+# series: ["自建服务"]
+# series_order: 1
 ---
 
 ## 🚀 基于 Caddy + Overleaf 社区版的在线 LaTeX 编译服务

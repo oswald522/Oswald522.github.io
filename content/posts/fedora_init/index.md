@@ -137,7 +137,7 @@ sudo systemctl mask systemd-rfkill.service
 sudo systemctl mask systemd-rfkill.socket
 ```
 
-zinit配置文件见{{< ref "zinit" >}}，安装完毕后运行`p10k configure`可以设置终端的配色主题方案。
+zinit配置文件见[Zinit配置文件]({{< ref "zinit" >}})，安装完毕后运行`p10k configure`可以设置终端的配色主题方案。
 
 2. Docker安装
 现如今docker安装已经傻瓜脚本化，运行如下的脚本：
