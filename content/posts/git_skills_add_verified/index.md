@@ -11,7 +11,7 @@ tags: ["GitHub","软件技巧"]
 
 ## 前言
 
-GitHub 是一个广泛使用的代码托管平台，除了基本的代码管理功能外，它还提供了许多高级功能来增强用户体验和安全性。其中之一就是 Verified（已验证） 标识符{{< figure src="verified.png" default=true alt="verified" width="100" >}}。当你的 commit 或 tag 被标记为 "Verified" 时，表示该提交或标签是通过 GPG 或 SSH 签名的，确保其真实性和完整性。本文将详细介绍如何为你的 GitHub 提交添加 Verified 标识符。
+GitHub 是一个广泛使用的代码托管平台，除了基本的代码管理功能外，它还提供了许多高级功能来增强用户体验和安全性。其中之一就是 Verified（已验证） 标识符。当你的 commit 或 tag 被标记为 "Verified" 时，表示该提交或标签是通过 GPG 或 SSH 签名的，确保其真实性和完整性。本文将详细介绍如何为你的 GitHub 提交添加 Verified 标识符。
 
 ---
 
