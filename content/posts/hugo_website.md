@@ -13,13 +13,10 @@ series: "建站技术"
 
 作为一个技术爱好者，我一直想拥有一个既简洁又高效的个人博客。这次重构博客，我将重点放在了速度、编辑体验和工作流的顺畅性上。经过一番调研，我选择了Hugo作为静态网站生成器，搭配Blowfish主题，并使用Cloudflare Pages进行部署和域名管理。下面，我将详细记录整个搭建过程。
 
-
-
 |             项目名称             | 简要介绍    | 类型    | 仓库地址                                                   |                                                                    论文                                                                     |
 | :--------------------------: | ------- | ----- | ------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------: |
 |           AO-MARL            | 多智能AO   | SHWFS | <https://github.com/Tomeu7/AO-MARL>                    |                                Adaptive Optics control with Multi-Agent Model-Free Reinforcement Learning                                 |
-| Integrating-SL-and-RL-for-AO | UNET+RL | PYWFS | https://github.com/Tomeu7/Integrating-SL-and-RL-for-AO | Integrating supervised and reinforcement learning for predictive control with an unmodulated pyramid wavefront sensor for adaptive optics |
-
+| Integrating-SL-and-RL-for-AO | UNET+RL | PYWFS | <https://github.com/Tomeu7/Integrating-SL-and-RL-for-AO> | Integrating supervised and reinforcement learning for predictive control with an unmodulated pyramid wavefront sensor for adaptive optics |
 
 ## 教程基础及前言
 

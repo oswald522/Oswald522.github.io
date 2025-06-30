@@ -1,19 +1,22 @@
 ---
 title: "[转载]Linux 部署及安全实践指南"
-description: "Linux常见部署命令记录"
+description: Linux常见部署命令记录
 date: 2024-03-30T08:16:25+08:00
 Lastmod: 2025-03-30T08:16:25+08:00
 draft: false
 showComments: true
-featureimage: "https://picsum.photos/seed/629600/1600/900.webp"
-tags: ["经验技术","转载教程"]
-series: "Linux部署"
+featureimage: https://picsum.photos/seed/629600/1600/900.webp
+tags:
+  - 经验技术
+  - 转载教程
+slug: "series"
+series: ["Linux部署教程"]
+series_order: 2
 ---
 
 {{< alert >}}
 以下内容转载来自于 [https://linux.do/t/topic/468841](https://linux.do/t/topic/468841)
 {{< /alert>}}
-
 
 > 本贴源自 <https://www.nodeseek.com/post-25170-1> , 但不能修改比较麻烦, 过了快两年也有需要更新的地方, 故重写.
 
@@ -91,8 +94,7 @@ chmod a+x InstallNET.sh
 mv /etc/apt/sources.list /etc/apt/sources.list.bak
 ```
 
-<details>
-<summary>对于 Debian 12, 境外机器, 使用官方源</summary>
+对于 Debian 12, 境外机器, 使用官方源</summary>
 
 ```sh
 cat <<'TEXT' > /etc/apt/sources.list
@@ -107,10 +109,7 @@ deb-src https://deb.debian.org/debian-security bookworm-security main contrib no
 TEXT
 ```
 
-</details>
-
-<details>
-<summary>对于 Debian 12, 阿里云机器, 使用内网域名 (腾讯云之类的依葫芦画瓢)</summary>
+对于 Debian 12, 阿里云机器, 使用内网域名 (腾讯云之类的依葫芦画瓢)</summary>
 
 ```sh
 cat <<'TEXT' > /etc/apt/sources.list
@@ -125,10 +124,7 @@ deb-src http://mirrors.cloud.aliyuncs.com/debian-security bookworm-security main
 TEXT
 ```
 
-</details>
-
-<details>
-<summary>对于 Debian 12, 境内机器, 使用清华大学镜像源</summary>
+对于 Debian 12, 境内机器, 使用清华大学镜像源</summary>
 
 ```sh
 cat <<'TEXT' > /etc/apt/sources.list
@@ -147,8 +143,6 @@ deb https://security.debian.org/debian-security bookworm-security main contrib n
 deb-src https://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
 TEXT
 ```
-
-</details>
 
 #### 0.2.2. 更新并安装常用工具
 
@@ -322,8 +316,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-<details>
-<summary>也可以使用清华镜像源, 插件使用代理.</summary>
+也可以使用清华镜像源, 插件使用代理.</summary>
 
 ```sh
 cd /tmp
@@ -335,8 +328,6 @@ git clone --depth=1 https://gh-proxy.com/https://github.com/romkatv/powerlevel10
 git clone https://gh-proxy.com/https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://gh-proxy.com/https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
-
-</details>
 
 #### 0.4.2. 配置 `.zshrc`
 
@@ -511,8 +502,7 @@ ufw enable
 
 按 y 确认应用即可.
 
-<details>
-<summary>可选阻止 PING, 不过略复杂, 一不小心 SSH 断了. 小白还是别动了...</summary>
+可选阻止 PING, 不过略复杂, 一不小心 SSH 断了. 小白还是别动了...</summary>
 
 ```sh
 cp /etc/ufw/before.rules /etc/ufw/before.rules.bak
@@ -747,8 +737,6 @@ COMMIT
 EOF
 ```
 
-</details>
-
 ---
 
 到此, 基本配置结束.
@@ -778,12 +766,9 @@ apt install gpg
 wget -qO - https://gitlab.com/afrd.gpg | sudo gpg --dearmor -vo /etc/apt/keyrings/xanmod-archive-keyring.gpg
 ```
 
-<details>
-<summary>为什么不用官方说明里面的 GPG key 地址?</summary>
+为什么不用官方说明里面的 GPG key 地址?</summary>
 
 ![图片|690x295](upload://oiCI5zAumJXl0O1jgnM2pnbQIyu.jpeg)
-
-</details>
 
 #### 1.1.3. 配置源
 
@@ -791,14 +776,11 @@ wget -qO - https://gitlab.com/afrd.gpg | sudo gpg --dearmor -vo /etc/apt/keyring
 echo 'deb [signed-by=/etc/apt/keyrings/xanmod-archive-keyring.gpg] http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-release.list
 ```
 
-<details>
-<summary>或者使用清华镜像源</summary>
+或者使用清华镜像源</summary>
 
 ```sh
 echo 'deb [signed-by=/etc/apt/keyrings/xanmod-archive-keyring.gpg] http://mirrors.tuna.tsinghua.edu.cn/xanmod releases main' | sudo tee /etc/apt/sources.list.d/xanmod-release.list
 ```
-
-</details>
 
 [color=red]**🥰注意事项**[/color]
 

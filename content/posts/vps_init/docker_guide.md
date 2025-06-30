@@ -4,11 +4,14 @@ description: ""
 date: 2022-03-29T11:59:55+08:00
 draft: false
 showComments: true
-featureimage: "https://picsum.photos/seed/ea5af9/1600/900.webp"
-tags: ["技术教程","经验转载"]
-## externalUrl: https://linux.do/t/topic/310934
-# series: "建站技术"
+featureimage: https://picsum.photos/seed/ea5af9/1600/900.webp
+tags:
+  - 技术教程
+  - 经验转载
+series: ["Linux部署教程"]
+series_order: 3
 ---
+
 {{< alert >}}
 以下内容转载来自于 [text](https://linux.do/t/topic/310934)
 {{< /alert>}}
@@ -374,11 +377,11 @@ CMD /usr/local/apache-tomcat-7.0.109/bin/startup.sh && tail -F /usr/local/apache
 
 文件内容说明：
 
-* FROM <image name>：声明定制镜像基于哪个基础镜像
-* ARG <参数名>\[=<默认值>\]：声明参数，在构建镜像时使用--build-arg <参数名>=<值> 来覆盖
-* ADD <host file> <container path>：将宿主机中文件添加至容器对应路径中，对于gzip, bzip2 以及 xz压缩文件自动解压（例如上面dockerfile中apache-tomcat-7.0.109.tar.gz）
-* COPY <host file> <container path>：与ADD命令类似，复制文件或路径到容器对应路径中
-* ENV <key> <value>：设置环境变量
+* `FROM <image name>`：声明定制镜像基于哪个基础镜像
+* `ARG <参数名>\[=<默认值>\]`：声明参数，在构建镜像时使用--build-arg <参数名>=<值> 来覆盖
+* `ADD <host file> <container path>`：将宿主机中文件添加至容器对应路径中，对于gzip, bzip2 以及 xz压缩文件自动解压（例如上面dockerfile中apache-tomcat-7.0.109.tar.gz）
+* `COPY <host file> <container path>`：与ADD命令类似，复制文件或路径到容器对应路径中
+* `ENV <key> <value>`：设置环境变量
 * WORKDIR <工作目录路径>：指定工作目录，使用终端连接容器时，会到此路径
 * EXPOSE <端口1> \[<端口2>...\] 声明容器端口（注意：仅作声明，帮助镜像使用者理解这个镜像服务的守护端口，以方便配置映射。）
 * CMD <shell 命令> ：在docker容器运行时执行的命令

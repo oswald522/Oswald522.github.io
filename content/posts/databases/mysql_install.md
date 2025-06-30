@@ -8,7 +8,7 @@ showComments: true
 featureimage: "https://picsum.photos/seed/3be906/1600/900.webp"
 tags: ["数据库软件"]
 series: ["数据库教程"]
-# series_order: 1
+series_order: 1
 ---
 
 
@@ -116,12 +116,12 @@ sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
 2. 选择适合您系统的版本（Windows x86_64 ZIP package）
 3. 点击下载
 
-### 2. 解压安装包
+### 2. 解压Zip安装包
 
 1. 将下载的ZIP文件解压到您选择的目录（例如：`C:\mariadb`）
 2. 建议路径不要包含空格或特殊字符
 
-### 3. 创建配置文件
+### 3. 手动创建配置文件
 
 1. 在MariaDB根目录下创建`my.ini`文件
 2. 添加以下基本配置内容：
@@ -186,7 +186,7 @@ log-error=C:/mariadb/data/mariadb.err
 
 1. 登录MariaDB：
 
-   ```
+   ```shell
    mysql -u root -p
    ```
 
@@ -211,7 +211,7 @@ log-error=C:/mariadb/data/mariadb.err
 
 3. 以跳过权限检查方式启动：
 
-   ```
+   ```shell
    mysqld --init-file=C:\path\to\reset.txt --console --skip-grant-tables
    ```
 
